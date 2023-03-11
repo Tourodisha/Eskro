@@ -1,0 +1,13 @@
+.app{
+  display: flex;
+  position: relative;
+}
+body {
+  background-color: #E5E5E5 !important;
+}
+.pro-sidebar > .pro-sidebar-inner{
+  background-color: #1F2A40!important;
+}
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item{
+  background-color: #1b222e !important;
+}
