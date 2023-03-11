@@ -62,7 +62,7 @@ const Sidebar = ({ activemenu, setactivemenu, screensize, setscreensize }) => {
                 <LogoDevOutlined sx={{color:"#FFFFFF",fontSize:"40px"}}/>
               </IconButton>
               <Typography variant='h4'>
-                Eskro
+                Eskroo
               </Typography>
             </div>
           </SidebarHeader>
