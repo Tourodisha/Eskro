@@ -1,52 +1,62 @@
 import React, { useEffect } from 'react'
-import { NotificationAddOutlined, Menu as MenuIcon, Search, SettingsOutlined, ArrowDropDownOutlined, AccountCircleOutlined } from "@mui/icons-material"
-import { AppBar, IconButton, InputBase, Toolbar, Box, Tooltip,Avatar } from '@mui/material'
-import logo from "../data/avatar.jpg"
-const Navbar = ({activemenu,setactivemenu,screensize,setscreensize}) => {
-  useEffect(()=>{
-    const handleresize=()=>setscreensize(window.innerWidth);
-    window.addEventListener('resize',handleresize);
-    handleresize();
-    return ()=>window.removeEventListener('resize',handleresize)
-  },[])
-  useEffect(()=>{
-    if(screensize<=900){
+import {HomeOutlined, MenuOutlined,Search} from "@mui/icons-material"
+import { Box, IconButton,Tooltip,InputBase } from '@mui/material'
+import { useStateContext } from '../context/Contextprovider'
+import {CircleNotificationsOutlined,MessageOutlined,AccountCircleOutlined,SettingsOutlined,NotificationAddOutlined} from "@mui/icons-material"
+import Setting from './Setting'
+import Account from './Account'
+const Navbar = () => {
+    const {activemenu,setactivemenu,screenSize,setscreenSize,isClicked, setisClicked}=useStateContext();
+    useEffect(()=>{
+      const handleresize=()=>setscreenSize(window.innerWidth)
+      window.addEventListener('resize',handleresize);
+      handleresize();
+      return ()=> window.removeEventListener('resize',handleresize)
+    },[])
+  
+    useEffect(()=>{
+      if(screenSize<=900){
         setactivemenu(false);
-    }
-    else{
+      }else{
         setactivemenu(true);
-    }
-},[screensize])
+      }
+    },[screenSize])
   return (
-    <AppBar sx={{ position: "static", background: "none", boxShadow: "none" }}>
-    <Toolbar sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <IconButton onClick={() => setactivemenu(!activemenu)} sx={{ mr: "10px" }}>
-                <MenuIcon />
-            </IconButton>
-            <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#dbdbd2", borderRadius: "9px", gap: "3rem", padding: "0.1rem 0.7rem" }}>
+    <Box display="flex" alignItems="center" justifyContent="space-between" position="relative" pt={2} pb={2} pl={3} pr={3}>
+      <Box  display="flex" alignItems="center" gap="10px">
+      <Tooltip title="Menu">
+        <IconButton onClick={()=>setactivemenu((prevmenu)=>!prevmenu)}>
+          <MenuOutlined />
+        </IconButton>
+      </Tooltip>
+      <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#dbdbd2", borderRadius: "9px", gap: "3rem", padding: "0.1rem 0.7rem" }}>
                 <InputBase placeholder='Search...' />
                 <IconButton>
                     <Search />
                 </IconButton>
             </Box>
-        </Box>
-        <Box display="flex" alignItems="center" justifyContent="center">
-            <Tooltip title="Setting">
-                <IconButton>
+      </Box>
+      <Box display="flex">
+      <Tooltip title="Setting">
+                <IconButton onClick={()=>handleClick("settings")}>
                     <SettingsOutlined />
                 </IconButton>
             </Tooltip>
-            <IconButton>
+            <Tooltip title="Account">
+            <IconButton onClick={()=>handleClick("Account")}>
                 <AccountCircleOutlined />
             </IconButton>
-            <IconButton>
+            </Tooltip>
+            <Tooltip title="Notification">
+            <IconButton onClick={()=>handleClick("Notification")}>
                 <NotificationAddOutlined />
             </IconButton>
-            <Avatar alt="Remy Sharp" src={logo} />
-        </Box>
-    </Toolbar>
-</AppBar>
+            </Tooltip>
+            {isClicked.settings && <Setting />}
+            {isClicked.account && <Account />}
+            {isClicked.settings && <Setting />}
+      </Box>
+    </Box>
   )
 }
 

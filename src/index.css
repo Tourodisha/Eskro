@@ -1,13 +1,24 @@
-.app{
-  display: flex;
-  position: relative;
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
-body {
+body{
   background-color: #E5E5E5 !important;
 }
-.pro-sidebar > .pro-sidebar-inner{
-  background-color: #1F2A40!important;
+.sidebar {
+  box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
 }
-.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item{
-  background-color: #1b222e !important;
+
+::-webkit-scrollbar {
+  width: 6px;
 }
+::-webkit-scrollbar-thumb {
+  background-color: rgb(216, 216, 216);
+  border-radius: 40px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* color-picker style  */
