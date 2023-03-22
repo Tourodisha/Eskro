@@ -29,7 +29,7 @@ const Login = () => {
     navigate("/register")
   }
   const handleForgetpassword=()=>{
-    navigate('/login/forgot-password');
+    navigate('/forgot-password');
   }
   const handleLogin = async(e) => {
     e.preventDefault();

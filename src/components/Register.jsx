@@ -8,7 +8,6 @@ import PlaystoreLogo from "../assets/G-playstore.png"
 import AppstoreLogo from "../assets/Apple-store.png"
 
 const Register = () => {
-
   const options = ['Vendor Type 1', 'Vendor Type 2', 'Vendor Type 3'];
   const navigate = useNavigate();
   const [vendorName, setvendorName] = useState("");
@@ -16,8 +15,7 @@ const Register = () => {
   const [Role, setRole] = useState("");
   const [vendorGstNumber, setvendorGstNumber] = useState("")
   const [vendorAddress, setvendorAddress] = useState("");
-  const [vendorProof, setvendorProof] = useState(null);
-  const [errors, setErrors] = useState({});
+  const [vendorProof, setvendorProof] = useState("");
   const handleFileChange = (event) => {
     setvendorProof(event.target.files[0]);
   };
@@ -25,18 +23,10 @@ const Register = () => {
     setRole(event.target.value);
   };
   const jumpToLoginpage = () => {
-    navigate('/login')
+    navigate('/')
   }
   const handleRegisterSubmit = (event) => {
     event.preventDefault();
-    const validationErrors = {};
-    if (!vendorName) {
-      validationErrors.vendorName = "First name is required"
-    }
-    setErrors(validationErrors)
-    if (Object.keys(validationErrors.length) === 0) {
-      alert("Your data is successfully stored in a database");
-    }
     console.log('Name:', vendorName);
     console.log("Vendor", Role)
     console.log('Email:', vendorNumber);
@@ -97,7 +87,6 @@ const Register = () => {
                 fullWidth
                 placeholder='Enter Vendor Name'
               />
-              {errors.vendorName && <div className="error">{errors.vendorName}</div>}
               <FormControl sx={{ m: 1 }}>
                 <InputLabel id="demo-simple-select-label" label="Vendor Type">Vendor Type</InputLabel>
                 <Select
@@ -114,7 +103,7 @@ const Register = () => {
               </FormControl>
               <TextField
                 type="number"
-                id=""
+                id="one"
                 label="Vendor Phone Number"
                 variant="outlined"
                 value={vendorNumber}
@@ -124,10 +113,10 @@ const Register = () => {
               />
               <TextField
                 type="number"
-                id=""
+                id="two"
                 label="Vendor GST Number"
                 value={vendorGstNumber}
-                onChange={(e)=>{setvendorGstNumber(e.target.value)}}
+                onChange={(e) => { setvendorGstNumber(e.target.value) }}
                 variant="outlined"
                 fullWidth
                 placeholder='Enter Vendor GST Number'
@@ -145,6 +134,7 @@ const Register = () => {
               <TextField
                 variant="outlined"
                 type="file"
+                onChange={handleFileChange}
                 label='Vendor Proof'
                 InputLabelProps={{
                   shrink: true,
