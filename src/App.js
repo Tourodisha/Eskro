@@ -16,10 +16,10 @@ const App = () => {
           <Box width="100%">
             <Routes>
               <Route path='/'>
-                <Route index element={<Dashboard />} />
+                <Route index  element={<Login />} />
+                {/* <Route index element={<Dashboard />} /> */}
                 <Route path='/dashboard' element={<Dashboard />} />
                 <Route path='register' element={<Register />}/>
-                <Route path='login' element={<Login />} />
                 <Route path='login/forgot-password' element={<Forgotpassword />} />
                 <Route path='plans' element={<Plans />} />
                 <Route path='revenue' element={<Revenue />} />

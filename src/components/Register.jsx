@@ -14,6 +14,7 @@ const Register = () => {
   const [vendorName, setvendorName] = useState("");
   const [vendorNumber, setvendorNumber] = useState("");
   const [Role, setRole] = useState("");
+  const [vendorGstNumber, setvendorGstNumber] = useState("")
   const [vendorAddress, setvendorAddress] = useState("");
   const [vendorProof, setvendorProof] = useState(null);
   const [errors, setErrors] = useState({});
@@ -125,9 +126,9 @@ const Register = () => {
                 type="number"
                 id=""
                 label="Vendor GST Number"
+                value={vendorGstNumber}
+                onChange={(e)=>{setvendorGstNumber(e.target.value)}}
                 variant="outlined"
-                value={vendorNumber}
-                onChange={(e) => setvendorNumber(e.target.value)}
                 fullWidth
                 placeholder='Enter Vendor GST Number'
               />

@@ -35,7 +35,7 @@ const Login = () => {
     e.preventDefault();
     if (vendorId === "777" && vendorPassword === "777") {
       setIsAuthenticated(true);
-      navigate('/')
+      navigate('/dashboard')
     } else {
       alert("Invalid Id or Password")
     }
