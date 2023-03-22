@@ -1,0 +1,74 @@
+.loginWrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: "#101120";
+}
+
+.backgroundWrapper {
+    background: url("../assets/line-pattern.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.imageWrapper {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageWrapper img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+.middlWrapper {
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.middlWrapper img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+.middlWrapperText {
+    color: white !important;
+    width: 90%;
+    text-align: justify;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerText {
+    color: white !important;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.formStyle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+.jj{
+    display: none;
+}

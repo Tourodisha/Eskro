@@ -1,7 +1,7 @@
 .contentwrapper{
     min-height: 100vh;
     width: 100%;
-    margin-left: 18rem;
+    margin-left: 15rem;
 }
 .sidebarcontentwrapper{
     min-height: 100vh;
@@ -43,7 +43,7 @@
     .contentwrapper{
         min-height: 100vh;
         width: 100%;
-        margin-left: 18rem;
+        margin-left: 15rem;
     }
 }
 @media(max-width:900px){

@@ -1,28 +1,29 @@
 import React from "react";
-import {HomeOutlined,KeyboardArrowDownOutlined,SettingsOutlined, KeyboardArrowLeftOutlined} from "@mui/icons-material"
+import {HomeOutlined,KeyboardArrowDownOutlined,CurrencyExchange,TurnedIn, AccountBalance,KeyboardArrowLeftOutlined,Dashboard} from "@mui/icons-material"
 export const Sidebardata=[
     {
         title:"Dashboard",
         path:"/dashboard",
-        icon:<SettingsOutlined />,
-
+        icon:<Dashboard />
     },
     {
-        title:"Exchange",
-        path:"/exchange",
-        icon:<SettingsOutlined />
-
+        title:"Plans",
+        path:"/plans",
+        icon:<CurrencyExchange />
     },
     {
-        title:"Direction",
-        path:"/direction",
-        icon:<SettingsOutlined />
-
+        title:"Product",
+        path:"/product",
+        icon:<TurnedIn />
+    },
+    {
+        title:"Revenue",
+        path:"/revenue",
+        icon:<CurrencyExchange />
     },
     {
         title:"Payouts",
-        path:"/payouts",
-        icon:<SettingsOutlined />,
+        icon:<AccountBalance />,
         iconClosed:<KeyboardArrowLeftOutlined />,
         iconopened:<KeyboardArrowDownOutlined />,
         subnav:[
@@ -31,52 +32,12 @@ export const Sidebardata=[
                 path:"/payouts/payouts1",
                 icon:<HomeOutlined />
             },
-            {
-                title:"Payouts2",
-                path:"/payouts/payouts2",
-                icon:<HomeOutlined />
-            }
+            // {
+            //     title:"Payouts2",
+            //     path:"/payouts/payouts2",
+            //     icon:<HomeOutlined />
+            // }
         ]
 
-    },
-    {
-        title:"Newjsdn",
-        path:"/Newjsdn",
-        icon:<SettingsOutlined />,
-        iconClosed:<KeyboardArrowLeftOutlined />,
-        iconopened:<KeyboardArrowDownOutlined />,
-        subnav:[
-            {
-                title:"Newjsdn",
-                path:"/Newjsdn/Newjsdn1",
-                icon:<HomeOutlined />
-            },
-            {
-                title:"Newjsdn",
-                path:"/Newjsdn/Newjsdn2",
-                icon:<HomeOutlined />
-            }
-        ]
-
-    },
-    {
-        title:"bsduj",
-        path:"/bsduj",
-        icon:<SettingsOutlined />,
-        iconClosed:<KeyboardArrowLeftOutlined />,
-        iconopened:<KeyboardArrowDownOutlined />,
-        subnav:[
-            {
-                title:"bsduj",
-                path:"/bsduj/bsduj1",
-                icon:<HomeOutlined />
-            },
-            {
-                title:"bsduj",
-                path:"/bsduj/bsduj2",
-                icon:<HomeOutlined />
-            }
-        ]
-
-    },
+    }
 ]

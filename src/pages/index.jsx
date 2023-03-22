@@ -1,0 +1,5 @@
+export {default as Dashboard} from "./dashboard/Dashboard"
+export {default as Plans} from "./plans/Plans"
+export {default as Product} from "./product/Product"
+export {default as Revenue} from "./revenue/Revenue"
+export {default as Payouts} from "./payouts/Payouts"
